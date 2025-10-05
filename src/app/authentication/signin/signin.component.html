@@ -1,0 +1,103 @@
+<div class="auth-container">
+	<div class="auth-main ">
+		<div class="background-image">
+			<img class="bg-image" src="assets/image1.jpg" alt="" />
+		</div>
+        <div class="auth-content">
+            <div class="form-content">
+                <form action="" [formGroup]="signInForm!">
+                    <div class="card">
+                        <div class="auth-header">
+                            <p>
+                                Welcome to To-do!!!
+                            </p>
+                            <p>
+                                Stay organized and get things done — one task at a time.
+                            </p>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                                <div>
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label class="font">Username</mat-label>
+                                        <input matInput formControlName="Username" />
+                                        <mat-icon matSuffix>
+                                            face</mat-icon>
+                                            @if(signInForm.get('Username')?.hasError('required')){
+                                                <mat-error >
+                                                    Username is required.
+                                                </mat-error>
+                                            }
+                                            
+                                    </mat-form-field>
+                                </div>
+                                <div>
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label class="font">Password</mat-label>
+                                        <input matInput type="text" formControlName="Password" />
+                                        <mat-icon matSuffix>
+                                            lock</mat-icon>
+                                            @if(signInForm.get('Password')?.hasError('required')){
+                                                <mat-error >
+                                                    Password is required.
+                                                </mat-error>
+                                            }
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-req">
+                                    <div>
+                                        <p style="font-weight: 500;" class="font">
+                                    <mat-checkbox>
+                                            Remember Me
+                                    </mat-checkbox></p>
+                                    </div>
+                                    <div style="margin-top: 25px;">
+                                        <a style="color: rgba(40, 40, 212, 0.895); cursor: pointer;" class="font">
+                                            Forget Password?
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div>
+                                    <button mat-raised-button class="form-btn" type="submit" [disabled]="!signInForm.valid">
+                                        <p class="font">
+                                            Login
+                                        </p>
+                                    </button>
+                                </div>
+                                <div>
+                                    <p style="font-size: medium;text-align: center;" class="font">Don't have an account? 
+                                        <a style="text-decoration: none;cursor: pointer;color: rgba(40, 40, 212, 0.895);" 
+                                        routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page">
+                                            Register Here
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                <h6 class="social-login-title">OR</h6>
+                <div class="social-icon mb-0 mt-3 d-flex">
+                    <div class="list-inline-item">
+                        <a href="javascript:void(0)" class="rounded">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </div>
+                    <div class="list-inline-item">
+                        <a href="javascript:void(0)" class="rounded flex-c-m">
+                                <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="list-inline-item">
+                        <a href="javascript:void(0)" class="rounded">
+                                <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="list-inline-item">
+                        <a href="javascript:void(0)" class="rounded">
+                                <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

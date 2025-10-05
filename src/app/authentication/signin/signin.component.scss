@@ -1,0 +1,122 @@
+.bg-image {
+  width: -webkit-fill-available;
+  height: 99vh;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  position: relative;
+  background-size: cover;
+  opacity: 0.18;
+}
+
+.auth-header {
+  font-family: Bitcount Prop Single Ink;
+  font-size: 25px;
+}
+
+.auth-content {
+  position: absolute;
+  top: 4%;
+  left: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.mat-mdc-notch-piece .mdc-notched-outline__notch {
+  border-right: none !important;
+}
+
+.form-content {
+  width: 55%;
+  padding: 10px;
+}
+
+.form-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 25px 0px;
+  border-radius: unset;
+}
+
+.font {
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: bolder;
+}
+
+.social-login-title {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  border-top: 1px solid #80808085;
+  padding-top: 10px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rounded {
+  border: 1px solid rgba(0, 0, 0, 0.295);
+  padding: 10px;
+  border-radius: 10px;
+}
+.rounded:hover {
+  background-color: gray;
+}
+i {
+  color: black;
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1800px) {
+  .form-req {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    padding: 10px 0px;
+    font-size: 16px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads 
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-req {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    padding: 10px 0px;
+    font-size: 16px;
+  }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles 
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 280px) and (max-width: 767px) {
+  .form-req {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    padding: 10px 0px;
+    font-size: 13px;
+  }
+}

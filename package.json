@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:TL.WEB": "node dist/TL.WEB/server/server.mjs"
+    "serve:ssr:TL.WEB": "node dist/TL.WEB/server/server.mjs",
+    "build:ssr": "ng build && ng run tl.web:server",
+    "serve:ssr": "node dist/tl.web/server/main.js",
+    "dev:ssr": "ng run tl.web:serve-ssr"
   },
   "prettier": {
     "printWidth": 100,
@@ -33,11 +36,12 @@
     "@angular/platform-server": "^20.1.0",
     "@angular/router": "^20.1.0",
     "@angular/ssr": "^20.1.6",
+    "@ng-bootstrap/ng-bootstrap": "^19.0.1",
     "@ngrx/effects": "^20.0.1",
     "@ngrx/store": "^20.0.1",
     "@ngrx/store-devtools": "^20.0.1",
-    "bootstrap": "^5.3.8",
     "express": "^5.1.0",
+    "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
