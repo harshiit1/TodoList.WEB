@@ -1,0 +1,352 @@
+
+<main class="main-content" id="mainContent">
+<!-- Header -->
+<header class="header">
+    <h1 class="page-title">Dashboard</h1>
+    <div class="header-actions">
+        <div class="search-bar">
+            <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="Search tasks, notes...">
+        </div>
+        <button class="btn-new-task" onclick="alert('New task dialog')">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+            </svg>
+            New Task
+        </button>
+    </div>
+</header>
+
+<!-- Stats Grid -->
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-header">
+            <div>
+                <div class="stat-value">24</div>
+                <div class="stat-label">Active Tasks</div>
+                <div class="stat-change positive">↑ 12% from last week</div>
+            </div>
+            <div class="stat-icon orange">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-header">
+            <div>
+                <div class="stat-value">18</div>
+                <div class="stat-label">Completed Today</div>
+                <div class="stat-change positive">↑ 8% from yesterday</div>
+            </div>
+            <div class="stat-icon green">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-header">
+            <div>
+                <div class="stat-value">42</div>
+                <div class="stat-label">Total Notes</div>
+                <div class="stat-change positive">↑ 5 new this week</div>
+            </div>
+            <div class="stat-icon blue">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-header">
+            <div>
+                <div class="stat-value">75%</div>
+                <div class="stat-label">Productivity Rate</div>
+                <div class="stat-change positive">↑ 3% this month</div>
+            </div>
+            <div class="stat-icon yellow">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Content Grid -->
+<div class="content-grid">
+    <!-- Today's Tasks -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Today's Tasks</h2>
+            <div class="card-actions">
+                <button class="btn-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                    </svg>
+                </button>
+                <button class="btn-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="tasks-list">
+            <div class="task-item" onclick="toggleTask(this)">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">Review Q1 marketing proposals</div>
+                    <div class="task-meta">
+                        <span class="task-priority high">High</span>
+                        <span>Due: 2:00 PM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="task-item" onclick="toggleTask(this)">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">Update project documentation</div>
+                    <div class="task-meta">
+                        <span class="task-priority medium">Medium</span>
+                        <span>Due: 4:00 PM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="task-item completed" onclick="toggleTask(this)">
+                <div class="task-checkbox checked"></div>
+                <div class="task-content">
+                    <div class="task-title">Team standup meeting</div>
+                    <div class="task-meta">
+                        <span class="task-priority low">Low</span>
+                        <span>Completed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="task-item" onclick="toggleTask(this)">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">Prepare client presentation</div>
+                    <div class="task-meta">
+                        <span class="task-priority high">High</span>
+                        <span>Due: Tomorrow</span>
+                    </div>
+                </div>
+            </div>
+            <div class="task-item" onclick="toggleTask(this)">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">Code review for feature branch</div>
+                    <div class="task-meta">
+                        <span class="task-priority medium">Medium</span>
+                        <span>Due: 6:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Widgets -->
+    <div>
+        <!-- Calendar Widget -->
+        <div class="card" style="margin-bottom: 24px;">
+            <div class="card-header">
+                <h2 class="card-title">Calendar</h2>
+            </div>
+            <div class="calendar-widget">
+                <div class="calendar-header">
+                    <span class="calendar-month">February 2026</span>
+                    <div class="calendar-nav">
+                        <button class="btn-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                            </svg>
+                        </button>
+                        <button class="btn-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-day-label">Sun</div>
+                    <div class="calendar-day-label">Mon</div>
+                    <div class="calendar-day-label">Tue</div>
+                    <div class="calendar-day-label">Wed</div>
+                    <div class="calendar-day-label">Thu</div>
+                    <div class="calendar-day-label">Fri</div>
+                    <div class="calendar-day-label">Sat</div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day has-event">2</div>
+                    <div class="calendar-day">3</div>
+                    <div class="calendar-day has-event">4</div>
+                    <div class="calendar-day">5</div>
+                    <div class="calendar-day">6</div>
+                    <div class="calendar-day">7</div>
+                    <div class="calendar-day today has-event">8</div>
+                    <div class="calendar-day">9</div>
+                    <div class="calendar-day has-event">10</div>
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day">12</div>
+                    <div class="calendar-day">13</div>
+                    <div class="calendar-day">14</div>
+                    <div class="calendar-day">15</div>
+                    <div class="calendar-day has-event">16</div>
+                    <div class="calendar-day">17</div>
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day">19</div>
+                    <div class="calendar-day">20</div>
+                    <div class="calendar-day">21</div>
+                    <div class="calendar-day">22</div>
+                    <div class="calendar-day has-event">23</div>
+                    <div class="calendar-day">24</div>
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+                    <div class="calendar-day">27</div>
+                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">29</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Recent Activity</h2>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon created">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-text">Created new task "Design review"</div>
+                        <div class="activity-time">5 minutes ago</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon completed">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                        </svg>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-text">Completed "Team standup meeting"</div>
+                        <div class="activity-time">1 hour ago</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon updated">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                        </svg>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-text">Updated project timeline</div>
+                        <div class="activity-time">3 hours ago</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon created">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                        </svg>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-text">Added note "Meeting insights"</div>
+                        <div class="activity-time">5 hours ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Notes -->
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Quick Notes</h2>
+        <div class="card-actions">
+            <button class="btn-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="notes-list">
+        <div class="note-item">
+            <div class="note-title">Project Requirements</div>
+            <div class="note-preview">Key features to implement in the next sprint: user authentication, dashboard redesign, API optimization...</div>
+            <div class="note-date">Updated 2 hours ago</div>
+        </div>
+        <div class="note-item">
+            <div class="note-title">Client Feedback</div>
+            <div class="note-preview">Notes from the client meeting: They loved the color scheme but requested more spacing in the mobile view...</div>
+            <div class="note-date">Updated yesterday</div>
+        </div>
+        <div class="note-item">
+            <div class="note-title">Ideas & Inspiration</div>
+            <div class="note-preview">Collection of design inspiration for the upcoming marketing campaign. Focus on minimalist aesthetics...</div>
+            <div class="note-date">Updated 3 days ago</div>
+        </div>
+    </div>
+</div>
+</main>
+
+<script>
+// Get elements
+const toggleBtn = document.getElementById('toggleBtn');
+const sidebar = document.getElementById('sidebar');
+const mainContent = document.getElementById('mainContent');
+
+// Toggle sidebar on button click
+toggleBtn.addEventListener('click', function() {
+    sidebar.classList.toggle('collapsed');
+    mainContent.classList.toggle('sidebar-collapsed');
+    
+    // Save state to localStorage
+    localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+});
+
+// Restore sidebar state on page load
+window.addEventListener('DOMContentLoaded', function() {
+    const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+    if (isCollapsed) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.add('sidebar-collapsed');
+    }
+});
+
+// Task toggle functionality
+function toggleTask(taskElement) {
+    const checkbox = taskElement.querySelector('.task-checkbox');
+    const isCompleted = taskElement.classList.contains('completed');
+    
+    if (isCompleted) {
+        taskElement.classList.remove('completed');
+        checkbox.classList.remove('checked');
+    } else {
+        taskElement.classList.add('completed');
+        checkbox.classList.add('checked');
+    }
+}
+</script>

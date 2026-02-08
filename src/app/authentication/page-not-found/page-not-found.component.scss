@@ -1,0 +1,70 @@
+.auth-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.251);
+}
+
+.error-header {
+  font-size: 250px;
+  display: flex;
+  justify-content: center;
+  color: red;
+  letter-spacing: 20px;
+  font-family: Alan Sans;
+}
+
+.error-subheader {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  font-size: 35px;
+  font-family: Barrio;
+}
+
+.error-subheader2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 50px;
+  font-family: Barrio;
+}
+
+.container-auth-form-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.auth-form-btn {
+  font-size: 20px;
+  padding: 25px 20px;
+  width: 50%;
+  font-family: Alan Sans;
+  margin-top: 75px;
+  letter-spacing: 2px;
+}
+
+.txt1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 16px;
+  
+  
+}
+.txt1:hover{
+    color: red;
+}
+
+.helptxt {
+    display: inline;
+    color: blue;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+.helptxt:hover {
+    color: red;
+}
