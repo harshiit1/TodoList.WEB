@@ -10,5 +10,8 @@ export class AuthenticationFacade {
   navigateTosignIn() {
     this.store.dispatch(AuthenticationActions.NavigateToSignInPage());
   }
+  navigateToDashboard() {
+    this.store.dispatch(AuthenticationActions.NavigateToDashboardPage());
+  }
   constructor(public store: Store) {}
 }

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared-module';
+import { ComponentsModule } from '../../shared/components-module';
 @Component({
   selector: 'app-dashboard',
-  imports: [SharedModule],
+  standalone: true,
+  imports: [SharedModule, ComponentsModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
