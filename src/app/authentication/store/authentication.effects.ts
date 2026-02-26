@@ -17,7 +17,16 @@ export class AuthenticationEffects {
       ),
     { dispatch: false },
   );
-
+  NavigateToDashboardPage$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthenticationActions.NavigateToDashboardPage),
+        tap(() => {
+          return this.router.navigate(['/todo-app/dashboard']);
+        }),
+      ),
+    { dispatch: false },
+  );
   constructor(
     private actions$: Actions,
     public router: Router,

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Charts } from './charts.component';
+import { SharedHeader } from './shared-header';
 
-describe('Charts', () => {
-  let component: Charts;
-  let fixture: ComponentFixture<Charts>;
+describe('SharedHeader', () => {
+  let component: SharedHeader;
+  let fixture: ComponentFixture<SharedHeader>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Charts]
+      declarations: [SharedHeader]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Charts);
+    fixture = TestBed.createComponent(SharedHeader);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

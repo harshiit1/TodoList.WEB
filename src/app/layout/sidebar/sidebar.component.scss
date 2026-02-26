@@ -136,7 +136,7 @@
   color: var(--text-primary);
 }
 
-.nav-link.active {
+.nav-link .active {
   background: linear-gradient(135deg, var(--secondary), var(--accent));
   color: white;
   box-shadow: 0 4px 16px rgba(249, 115, 22, 0.25);
