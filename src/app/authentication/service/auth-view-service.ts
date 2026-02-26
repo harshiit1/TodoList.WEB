@@ -98,7 +98,8 @@ export class AuthViewService {
 
   onSignInButtonClick() {
     console.log('Sign In Button Clicked');
-    this.route.navigate(['/todo-app/dashboard']);
+    this.authFacade.navigateToDashboard()
+    // this.route.navigate(['/todo-app/dashboard']);
   }
 
   onDestroy(): void {

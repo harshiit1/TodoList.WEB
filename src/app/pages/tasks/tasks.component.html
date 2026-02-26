@@ -1,0 +1,472 @@
+
+<main class="main-content" id="mainContent">
+    <!-- Header -->
+    <app-shared-header [title]="'Tasks'" [CreateSearchBar]="false" 
+            [subtitle]="'Manage and organize your daily tasks'">
+    </app-shared-header>
+  
+    <!-- Task Stats -->
+    <div class="task-stats">
+        <div class="stat-item">
+            <div class="stat-icon total">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                </svg>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">24</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon completed">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                </svg>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">18</div>
+                <div class="stat-label">Completed</div>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon pending">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">4</div>
+                <div class="stat-label">In Progress</div>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon overdue">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">2</div>
+                <div class="stat-label">Overdue</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="filter-group">
+            <span class="filter-label">Filter:</span>
+            <button class="filter-btn active" onclick="filterTasks('all')">All</button>
+            <button class="filter-btn" onclick="filterTasks('active')">Active</button>
+            <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
+        </div>
+
+        <div class="filter-group">
+            <span class="filter-label">Priority:</span>
+            <button class="filter-btn" onclick="filterPriority('high')">High</button>
+            <button class="filter-btn" onclick="filterPriority('medium')">Medium</button>
+            <button class="filter-btn" onclick="filterPriority('low')">Low</button>
+        </div>
+
+        <input type="text" class="search-input" placeholder="Search tasks..." onkeyup="searchTasks(this.value)">
+    </div>
+
+    <!-- Tasks Container -->
+    <div class="tasks-container">
+        <!-- Task List -->
+        <div class="task-list-section">
+            <div class="section-header">
+                <h2 class="section-title">All Tasks</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                        </svg>
+                    </button>
+                    <button class="view-btn">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="task-list" id="taskList">
+                <!-- Task 1 -->
+                <div class="task-card" data-priority="high" data-category="work">
+                    <div class="task-header">
+                        <div class="task-checkbox" onclick="toggleTaskComplete(this)"></div>
+                        <div class="task-main">
+                            <div class="task-title">Review Q1 Marketing Strategy</div>
+                            <div class="task-description">Analyze campaign performance and prepare recommendations for Q2 initiatives</div>
+                            <div class="task-meta">
+                                <span class="task-tag priority-high">High Priority</span>
+                                <span class="task-tag category">Work</span>
+                                <span class="task-due">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                    </svg>
+                                    Today, 2:00 PM
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 2 -->
+                <div class="task-card" data-priority="medium" data-category="personal">
+                    <div class="task-header">
+                        <div class="task-checkbox" onclick="toggleTaskComplete(this)"></div>
+                        <div class="task-main">
+                            <div class="task-title">Update Project Documentation</div>
+                            <div class="task-description">Add new features to README and update API documentation</div>
+                            <div class="task-meta">
+                                <span class="task-tag priority-medium">Medium Priority</span>
+                                <span class="task-tag category">Personal</span>
+                                <span class="task-due">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                    </svg>
+                                    Tomorrow, 4:00 PM
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 3 (Completed) -->
+                <div class="task-card completed" data-priority="low" data-category="work">
+                    <div class="task-header">
+                        <div class="task-checkbox checked" onclick="toggleTaskComplete(this)"></div>
+                        <div class="task-main">
+                            <div class="task-title">Team Standup Meeting</div>
+                            <div class="task-description">Daily sync with the development team</div>
+                            <div class="task-meta">
+                                <span class="task-tag priority-low">Low Priority</span>
+                                <span class="task-tag category">Work</span>
+                                <span class="task-due">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                    </svg>
+                                    Today, 9:00 AM
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 4 -->
+                <div class="task-card" data-priority="high" data-category="work">
+                    <div class="task-header">
+                        <div class="task-checkbox" onclick="toggleTaskComplete(this)"></div>
+                        <div class="task-main">
+                            <div class="task-title">Prepare Client Presentation</div>
+                            <div class="task-description">Create slides for the quarterly business review meeting</div>
+                            <div class="task-meta">
+                                <span class="task-tag priority-high">High Priority</span>
+                                <span class="task-tag category">Work</span>
+                                <span class="task-due overdue">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                    </svg>
+                                    Yesterday (Overdue)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 5 -->
+                <div class="task-card" data-priority="medium" data-category="personal">
+                    <div class="task-header">
+                        <div class="task-checkbox" onclick="toggleTaskComplete(this)"></div>
+                        <div class="task-main">
+                            <div class="task-title">Code Review for Feature Branch</div>
+                            <div class="task-description">Review pull request #234 and provide feedback</div>
+                            <div class="task-meta">
+                                <span class="task-tag priority-medium">Medium Priority</span>
+                                <span class="task-tag category">Personal</span>
+                                <span class="task-due">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                    </svg>
+                                    Today, 6:00 PM
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 6 -->
+                <div class="task-card" data-priority="low" data-category="personal">
+                    <div class="task-header">
+                        <div class="task-checkbox" onclick="toggleTaskComplete(this)"></div>
+                        <div class="task-main">
+                            <div class="task-title">Organize Email Inbox</div>
+                            <div class="task-description">Archive old emails and set up new filters</div>
+                            <div class="task-meta">
+                                <span class="task-tag priority-low">Low Priority</span>
+                                <span class="task-tag category">Personal</span>
+                                <span class="task-due">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                    </svg>
+                                    Friday, 3:00 PM
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Panels -->
+        <div class="sidebar-panel">
+            <!-- Categories -->
+            <div class="panel-card">
+                <h3 class="panel-title">Categories</h3>
+                <div class="category-list">
+                    <div class="category-item active" onclick="filterCategory('all')">
+                        <div class="category-info">
+                            <div class="category-color" style="background: linear-gradient(135deg, var(--secondary), var(--accent));"></div>
+                            <span class="category-name">All Tasks</span>
+                        </div>
+                        <span class="category-count">24</span>
+                    </div>
+                    <div class="category-item" onclick="filterCategory('work')">
+                        <div class="category-info">
+                            <div class="category-color" style="background: #3b82f6;"></div>
+                            <span class="category-name">Work</span>
+                        </div>
+                        <span class="category-count">12</span>
+                    </div>
+                    <div class="category-item" onclick="filterCategory('personal')">
+                        <div class="category-info">
+                            <div class="category-color" style="background: #10b981;"></div>
+                            <span class="category-name">Personal</span>
+                        </div>
+                        <span class="category-count">8</span>
+                    </div>
+                    <div class="category-item" onclick="filterCategory('shopping')">
+                        <div class="category-info">
+                            <div class="category-color" style="background: #f59e0b;"></div>
+                            <span class="category-name">Shopping</span>
+                        </div>
+                        <span class="category-count">4</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="panel-card">
+                <h3 class="panel-title">Quick Actions</h3>
+                <div class="quick-actions">
+                    <button class="action-btn" onclick="alert('Export tasks')">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/>
+                        </svg>
+                        Export Tasks
+                    </button>
+                    <button class="action-btn" onclick="alert('Clear completed')">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                        </svg>
+                        Clear Completed
+                    </button>
+                    <button class="action-btn" onclick="alert('Print tasks')">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+                        </svg>
+                        Print List
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- New Task Modal -->
+<div class="modal" id="taskModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Create New Task</h2>
+            <button class="close-btn" onclick="closeModal()">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+        </div>
+
+        <form id="taskForm" onsubmit="createTask(event)">
+            <div class="form-group">
+                <label class="form-label">Task Title</label>
+                <input type="text" class="form-input" placeholder="Enter task title" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Description</label>
+                <textarea class="form-textarea" placeholder="Add task description"></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">Priority</label>
+                    <select class="form-select" required>
+                        <option value="">Select priority</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-select" required>
+                        <option value="">Select category</option>
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="shopping">Shopping</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">Due Date</label>
+                    <input type="date" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Due Time</label>
+                    <input type="time" class="form-input" required>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="btn-primary">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    Create Task
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Sidebar toggle
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+
+    toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('sidebar-collapsed');
+        localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+    });
+
+    window.addEventListener('DOMContentLoaded', function() {
+        const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+        if (isCollapsed) {
+            sidebar.classList.add('collapsed');
+            mainContent.classList.add('sidebar-collapsed');
+        }
+    });
+
+    // Task completion toggle
+    function toggleTaskComplete(checkbox) {
+        const taskCard = checkbox.closest('.task-card');
+        checkbox.classList.toggle('checked');
+        taskCard.classList.toggle('completed');
+    }
+
+    // Filter tasks
+    function filterTasks(filter) {
+        const buttons = document.querySelectorAll('.filter-bar .filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const tasks = document.querySelectorAll('.task-card');
+        tasks.forEach(task => {
+            if (filter === 'all') {
+                task.style.display = 'block';
+            } else if (filter === 'completed') {
+                task.style.display = task.classList.contains('completed') ? 'block' : 'none';
+            } else if (filter === 'active') {
+                task.style.display = !task.classList.contains('completed') ? 'block' : 'none';
+            }
+        });
+    }
+
+    // Filter by priority
+    function filterPriority(priority) {
+        const tasks = document.querySelectorAll('.task-card');
+        tasks.forEach(task => {
+            const taskPriority = task.getAttribute('data-priority');
+            task.style.display = taskPriority === priority ? 'block' : 'none';
+        });
+    }
+
+    // Filter by category
+    function filterCategory(category) {
+        const items = document.querySelectorAll('.category-item');
+        items.forEach(item => item.classList.remove('active'));
+        event.target.closest('.category-item').classList.add('active');
+
+        const tasks = document.querySelectorAll('.task-card');
+        tasks.forEach(task => {
+            if (category === 'all') {
+                task.style.display = 'block';
+            } else {
+                const taskCategory = task.getAttribute('data-category');
+                task.style.display = taskCategory === category ? 'block' : 'none';
+            }
+        });
+    }
+
+    // Search tasks
+    function searchTasks(query) {
+        const tasks = document.querySelectorAll('.task-card');
+        const searchTerm = query.toLowerCase();
+
+        tasks.forEach(task => {
+            const title = task.querySelector('.task-title').textContent.toLowerCase();
+            const description = task.querySelector('.task-description').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                task.style.display = 'block';
+            } else {
+                task.style.display = 'none';
+            }
+        });
+    }
+
+    // Modal functions
+    function openModal() {
+        document.getElementById('taskModal').classList.add('active');
+    }
+
+    function closeModal() {
+        document.getElementById('taskModal').classList.remove('active');
+        document.getElementById('taskForm').reset();
+    }
+
+    function createTask(event) {
+        event.preventDefault();
+        alert('Task created successfully!');
+        closeModal();
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('taskModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+</script>

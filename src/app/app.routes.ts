@@ -25,27 +25,31 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     // canActivate:[AuthGuard],
     children: [
-        { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { 
-        path: 'dashboard', 
-        loadComponent: () => import('./pages/dashboard/dashboard.component').then(c => c.DashboardComponent) 
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./pages/dashboard/dashboard.component').then((c) => c.DashboardComponent),
       },
-      { 
-        path: 'tasks', 
-        loadComponent: () => import('./pages/tasks.component/tasks.component').then(c => c.TasksComponent) 
+      {
+        path: 'tasks',
+        loadComponent: () => import('./pages/tasks/tasks.component').then((c) => c.TasksComponent),
       },
-      { 
-        path: 'profile', 
-        loadComponent: () => import('./pages/projects/projects.component').then(c => c.ProjectsComponent) 
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('./pages/projects/projects.component').then((c) => c.ProjectsComponent),
       },
-      { 
-        path: 'anmalytics', 
-        loadComponent: () => import('./pages/analytics/analytics.component').then(c => c.AnalyticsComponent) 
+      {
+        path: 'anmalytics',
+        loadComponent: () =>
+          import('./pages/analytics/analytics.component').then((c) => c.AnalyticsComponent),
       },
-      { 
-        path: 'settings', 
-        loadComponent: () => import('./pages/settings/settings.component').then(c => c.SettingsComponent) 
+      {
+        path: 'settings',
+        loadComponent: () =>
+          import('./pages/settings/settings.component').then((c) => c.SettingsComponent),
       },
-    ]
+    ],
   },
 ];

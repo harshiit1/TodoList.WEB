@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared-module';
 import { ComponentsModule } from '../../shared/components-module';
+
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-tasks.component',
   standalone: true,
   imports: [SharedModule, ComponentsModule],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
+  templateUrl: './tasks.component.html',
+  styleUrl: './tasks.component.scss'
 })
-export class DashboardComponent {}
+export class TasksComponent {
+
+}
